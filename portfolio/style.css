@@ -36,14 +36,16 @@ text-decoration: none;
 font-weight: 500;
 transition: .3s;
 margin-left: 35px;
-/* opacity: 1; */
 animation: slideTop 1s ease forwards;
+animation-delay: calc(.2s *var(--i));
 }
 .navbar  a:hover{
-    color:rgb(86, 179, 179);
+    /* color:rgb(86, 179, 179); */
+    color: #9171f8;
 }
 .navbar  a.active{
-    color:rgb(86, 179, 179);
+    /* color:rgb(86, 179, 179); */
+    color: #9171f8;
 }
 .home {
  position: relative;
@@ -62,25 +64,45 @@ padding: 70px 10% 0;
     font-size: 56px;
     font-weight: 700;
     margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .3s;
 
 }
 .home-content h3{
     font-size: 32px;
-    font-weight:700
+    font-weight:700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s  ;
+    
+}
+.home-content h3:nth-of-type(2){
+   margin-bottom: 10px;
+   margin-top: 10px;
+   animation: slideTop 1s ease forwards;
+   animation-delay: .7s;
     
 }
 .home-content h3 span{
-   color: rgb(40, 137, 158);
-    
+   /* color: rgb(40, 137, 158); */
+    color: #9171f8;
 }
 .home-content p{
 font-size: 30px;
 font-weight: 400;
+opacity: 0;
+animation: slideLeft 1s ease forwards;
+animation-delay: 1s;
 }
 
 .home-img img {
      max-width: 450px;
      margin: -20px;
+     border-radius: 50%;
+     opacity: 0;
+     animation: zoomIn 1s ease forwards;
+     animation-delay: 2s;
 }
 .social-media a{
     display: inline-flex;
@@ -89,27 +111,32 @@ font-weight: 400;
     justify-content: center;
     align-items: center;
     background: transparent;
-    border: 2px solid rgb(40, 137, 158);
+    border: 2px solid #9171f8;
     border-radius: 50%;
     text-decoration: none;
     margin: 30px 14px 30px 0;
     font-size: 20px;
-    color: rgb(40, 137, 158);
-    box-shadow: 0 0 20px rgb(53, 163, 163);
-    transition: .5 ease;
-
+    color: #9171f8;
+    box-shadow: 0 0 20px #9171f8;
+    transition: .7 ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s *var(--i));
 
 }
 .btn{
-   background-color: rgb(40, 137, 158);
+   background-color: #9171f8;
     padding: 12px 28px;
     display: inline-block;
     border-radius: 40px;
-    box-shadow: 0 0 10px rgb(40, 137, 158);
+    box-shadow: 0 0 10px #9171f8;
     text-decoration: none ;
     font-weight: 400;
     color: #000000;
     letter-spacing: 1px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1s;
 }
 @keyframes slideRight {
     0%{
@@ -130,4 +157,235 @@ font-weight: 400;
         transform: translateY(0);
         opacity: 1;
     }
+}
+@keyframes slideBottom{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translatex(0);
+        opacity: 1;
+    }
+}
+@keyframes zoomIn{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #9171f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(239, 231, 231, 0.1);
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+  
+}
+.card:hover{
+    box-shadow: rgba(200, 200, 207, 0.7) 0px 50px 100px -20px, rgba(204, 197, 197, 0.7) 0px 30px 60px -30px,
+    rgb(209, 214, 219,0.7) 0px -2px 6px 0px inset;
+}
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.card-text {
+    font-size: 1em;
+    margin: 0 0 20px;
+    color: #fff;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #1f1b1b;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #726893
+}
+.contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #000000;
+color: #fff;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color:#9171f8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #6f58bc;
+}
+
+.response-message {
+    margin-top: 20px;
+    font-size: 1em;
+}
+/*  
+*/
+
+
+
+.skills-container {
+    /* max-width: 800px; */
+   
+    
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #9171f8;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 10px rgba(237, 240, 237, 2); */
+    text-align: center;
+}
+.skills-container:hover {
+    box-shadow: 8px 12px 18px rgba(237, 240, 237, 2);
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #9171f8;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill {
+    flex: 1 1 300px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.skill-icon {
+    font-size: 3em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.skill-info {
+    margin-top: 10px;
+}
+
+.skill-info h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 8px;
+    width: 100%;
+    margin: 10px 0;
+    position: relative;
+}
+
+.progress {
+    background-color: #007bff;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.skill-level {
+    font-size: 0.9em;
+    color: #555;
 }
